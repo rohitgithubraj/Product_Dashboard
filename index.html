@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Dashboard - Live Demo</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- ASIDE -->
+    <aside id="sidebar">
+      <div class="top">
+        <div class="logo">
+          <h2>Product<span class="danger"> Dashboard</span></h2>
+        </div>
+        <div class="close">
+          <span class="material-symbols-outlined">close</span>
+        </div>
+      </div>
+      <div class="sidebar">
+        <a href="#" class="active">
+          <span class="material-symbols-outlined">grid_view</span>
+          <h3>Dashboard</h3>
+        </a>
+        <a href="#">
+          <span class="material-symbols-outlined">category</span>
+          <h3>Product Management</h3>
+        </a>
+        <a href="#">
+          <span class="material-symbols-outlined">add</span>
+          <h3>Add Product</h3>
+        </a>
+        <a href="#">
+          <span class="material-symbols-outlined">logout</span>
+          <h3>Logout</h3>
+        </a>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main>
+      <h1>Dashboard</h1>
+      <div class="date">
+        <input type="date" id="dateInput">
+      </div>
+
+      <div class="insights">
+        <div class="sales">
+          <span class="material-symbols-outlined">trending_up</span>
+          <div class="middle">
+            <div class="left">
+              <h3>Sales</h3>
+              <h1>$30,560</h1>
+            </div>
+            <div class="progress">
+              <svg>
+                <circle r="30" cy="40" cx="40"></circle>
+              </svg>
+              <div class="number">80%</div>
+            </div>
+          </div>
+          <small>Last 24 Hours</small>
+        </div>
+
+        <div class="expenses">
+          <span class="material-symbols-outlined">local_mall</span>
+          <div class="middle">
+            <div class="left">
+              <h3>Expenses</h3>
+              <h1>$20,760</h1>
+            </div>
+            <div class="progress">
+              <svg>
+                <circle r="30" cy="40" cx="40"></circle>
+              </svg>
+              <div class="number">80%</div>
+            </div>
+          </div>
+          <small>Last 24 Hours</small>
+        </div>
+
+        <div class="income">
+          <span class="material-symbols-outlined">stacked_line_chart</span>
+          <div class="middle">
+            <div class="left">
+              <h3>Income</h3>
+              <h1>$50,560</h1>
+            </div>
+            <div class="progress">
+              <svg>
+                <circle r="30" cy="40" cx="40"></circle>
+              </svg>
+              <div class="number">80%</div>
+            </div>
+          </div>
+          <small>Last 24 Hours</small>
+        </div>
+      </div>
+
+      <!-- PRODUCT SECTION -->
+      <div class="product">
+        <h1>Products</h1>
+        <div class="filter-bar">
+          <input type="text" id="searchInput" placeholder="Search by name">
+          <select id="categoryFilter">
+            <option value="all">All Categories</option>
+            <option value="electronics">Electronics</option>
+            <option value="sports">Sports</option>
+            <option value="fashion">Fashion</option>
+            <option value="home">Home</option>
+          </select>
+          <select id="availabilityFilter">
+            <option value="all">All Products</option>
+            <option value="in-stock">In Stock</option>
+            <option value="out-of-stock">Out of Stock</option>
+          </select>
+        </div>
+
+        <div class="product-list" id="productList">
+          <!-- Static initial products -->
+          <div class="product-card" data-name="Wireless Headphones" data-category="electronics" data-availability="in-stock">
+            <h3>Earbuds</h3>
+            <p>$79.99</p>
+            <span class="status in-stock">In Stock</span>
+          </div>
+          <div class="product-card" data-name="Running Shoes" data-category="sports" data-availability="in-stock">
+            <h3>Sports Shoes</h3>
+            <p>$120.00</p>
+            <span class="status in-stock">In Stock</span>
+          </div>
+          <div class="product-card" data-name="Coffee Maker" data-category="home" data-availability="out-of-stock">
+            <h3>Coffee Maker</h3>
+            <p>$89.00</p>
+            <span class="status out-of-stock">Out of Stock</span>
+          </div>
+          <div class="product-card" data-name="Cricket Bat" data-category="sports" data-availability="in-stock">
+            <h3>Cricket Bat</h3>
+            <p>$20.99</p>
+            <span class="status in-stock">In Stock</span>
+          </div>
+          <div class="product-card" data-name="Smart Watch" data-category="electronics" data-availability="in-stock">
+            <h3>Smart Watch</h3>
+            <p>$199.99</p>
+            <span class="status in-stock">In Stock</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ADD PRODUCT FORM -->
+      <div class="add-product-section" id="addProductSection">
+        <h1>Add New Product</h1>
+        <form id="addProductForm">
+          <div class="form-group">
+            <label>Product Name</label>
+            <input type="text" id="productName" placeholder="Enter product name" required>
+          </div>
+          <div class="form-group">
+            <label>Price ($)</label>
+            <input type="number" id="productPrice" placeholder="Enter price" required>
+          </div>
+          <div class="form-group">
+            <label>Category</label>
+            <select id="productCategory" required>
+              <option value="">Select category</option>
+              <option value="electronics">Electronics</option>
+              <option value="sports">Sports</option>
+              <option value="fashion">Fashion</option>
+              <option value="home">Home</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Availability</label>
+            <select id="productAvailability" required>
+              <option value="in-stock">In Stock</option>
+              <option value="out-of-stock">Out of Stock</option>
+            </select>
+          </div>
+          <button type="submit" class="btn">Add Product</button>
+        </form>
+      </div>
+    </main>
+  
+    <!-- RIGHT SECTION -->
+    <div class="right">
+      <div class="top">
+        <button id="menu_bar" aria-label="Toggle menu">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+        </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
