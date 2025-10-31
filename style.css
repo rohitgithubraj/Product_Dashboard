@@ -1,0 +1,454 @@
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      text-decoration: none;
+      border: 0;
+      list-style: none;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      width: 100vw;
+      height: 100vh;
+      font-size: 0.88rem;
+      user-select: none;
+      overflow-x: hidden;
+      background-color: aliceblue;
+    }
+
+    .container {
+      display: grid;
+      width: 96%;
+      gap: 1.8rem;
+      grid-template-columns: 15rem auto 13rem;
+      margin: 0 auto;
+    }
+
+    a {
+      color: black;
+      cursor: pointer;
+    }
+
+    h1 {
+      font-weight: 850;
+      font-size: 1.8rem;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+    }
+
+    h3 {
+      font-size: 0.87rem;
+    }
+
+    small {
+      font-size: 0.75rem;
+    }
+
+    .profile-photo img {
+      width: 2.8rem;
+      height: 2.8rem;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    .text-muted {
+      color: maroon;
+    }
+
+    p {
+      color: black;
+    }
+
+    b {
+      color: maroon;
+    }
+
+    .danger {
+      color: goldenrod;
+    }
+
+    /* ASIDE */
+    aside {
+      height: 100vh;
+      transition: transform 0.25s ease;
+      background-color: transparent;
+    }
+
+    aside .top {
+      background-color: aliceblue;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: 1.4rem;
+    }
+
+    aside .logo {
+      display: flex;
+      gap: 1rem;
+    }
+
+    aside .top div.close {
+      display: none;
+    }
+
+    aside .sidebar {
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      height: 85vh;
+      position: relative;
+      top: 1rem;
+      border-radius: 12px;
+      padding-top: 0.5rem;
+    }
+
+    aside .sidebar a {
+      display: flex;
+      color: grey;
+      margin-left: 2rem;
+      gap: 1rem;
+      align-items: center;
+      height: 3.2rem;
+      transition: all .1s ease-in;
+    }
+
+    aside .sidebar a span {
+      font-size: 1.6rem;
+      transition: all .1s ease-in;
+    }
+
+    aside .sidebar a:last-child {
+      position: absolute;
+      bottom: 1rem;
+      width: 100%;
+    }
+
+    aside .sidebar a.active {
+      background-color: lightyellow;
+      color: black;
+      border-left: 5px solid darkgoldenrod;
+    }
+
+    aside .sidebar a:hover {
+      color: #7380ec;
+    }
+
+    aside .sidebar a:hover span {
+      margin-left: 1rem;
+    }
+
+    /* MAIN */
+    main {
+      margin-top: 1rem;
+      width: auto;
+    }
+
+    main input {
+      background-color: transparent;
+      border: 0;
+      outline: 0;
+      color: black;
+    }
+
+    main .date {
+      display: inline-block;
+      background-color: white;
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+    }
+
+    main .insights {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+    }
+
+    main .insights > div {
+      background-color: white;
+      padding: 1.2rem;
+      border-radius: 2rem;
+      margin-top: 1rem;
+      box-shadow: 0 2rem 3rem rgba(132, 139, 200, 0.18);
+      transition: all 0.3s ease;
+    }
+
+    main .insights > div span {
+      background: coral;
+      padding: 0.5rem;
+      border-radius: 50%;
+      color: white;
+      font-size: 2rem;
+    }
+
+    main .insights > div .middle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    main .insights > div .middle h1 {
+      font-size: 1.6rem;
+    }
+
+    main .insights .progress {
+      position: relative;
+      height: 68px;
+      width: 68px;
+      border-radius: 60px;
+    }
+
+    main .insights svg {
+      height: 150px;
+      width: 150px;
+      position: absolute;
+      top: 0;
+    }
+
+    main .insights svg circle {
+      fill: none;
+      stroke: #7380ec;
+      stroke-width: 5;
+      stroke-dasharray: 150;
+      stroke-dashoffset: 10;
+    }
+
+    main .insights .progress .number {
+      position: absolute;
+      top: 5%;
+      left: 5%;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* PRODUCT SECTION */
+    .product {
+      margin-top: 2rem;
+    }
+
+    .filter-bar {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-bar input,
+    .filter-bar select {
+      padding: 0.7rem 1rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+      outline: none;
+      min-width: 200px;
+    }
+
+    .filter-bar input:focus,
+    .filter-bar select:focus {
+      border-color: #6c63ff;
+      box-shadow: 0 0 4px rgba(108, 99, 255, 0.5);
+    }
+
+    .product-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .product-card {
+      background: linear-gradient(lightyellow, goldenrod);
+      color: black;
+      border-radius: 16px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-card h3 {
+      margin-top: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .product-card p {
+      font-size: 1rem;
+      margin: 0.5rem 0;
+    }
+
+    .status {
+      display: inline-block;
+      padding: 0.4rem 0.8rem;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .in-stock {
+      background-color: #d1fae5;
+      color: #065f46;
+    }
+
+    .out-of-stock {
+      background-color: #fee2e2;
+      color: rgb(174, 11, 11);
+    }
+
+    /* ADD PRODUCT FORM */
+    .add-product-section {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      margin-top: 2rem;
+      display: none;
+    }
+
+    .add-product-section h1 {
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+      color: #222;
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #444;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 0.7rem;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+      outline: none;
+      font-size: 1rem;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      border-color: #6c63ff;
+    }
+
+    .btn {
+      background: #6c63ff;
+      color: #fff;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #5848d1;
+    }
+
+    /* RIGHT SECTION */
+    .right {
+      padding: 1.5rem;
+      background: #f0f6ff;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .right .top {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 1.2rem;
+    }
+
+    #menu_bar {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    @keyframes slideIn {
+      from {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideOut {
+      from {
+        transform: translateX(0);
+        opacity: 1;
+      }
+      to {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+      aside {
+        display: block;
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 80%;
+        max-width: 320px;
+        transform: translateX(-115%);
+        z-index: 2000;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        background: transparent;
+      }
+      aside.open {
+        transform: translateX(0);
+      }
+      #menu_bar {
+        display: block;
+      }
+    }
+   
+#menu_bar {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;               
+  background: #fff;
+  padding: 8px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  cursor: pointer;
+  z-index: 3000;
+  transition: background 0.3s ease;
+}
+
+#menu_bar:hover {
+  background: #f8f8f8;
+}
+
+/* Hide menu icon on desktop */
+@media (min-width: 769px) {
+  #menu_bar {
+    display: none !important;
+  }
+}
